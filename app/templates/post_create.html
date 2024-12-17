@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Новий пост{% endblock %}
+
+{% block content %}
+<h1>Додати новий пост</h1>
+<form method="post">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.title.label }}<br>
+        {{ form.title(size=50) }}
+    </div>
+    <div>
+        {{ form.content.label }}<br>
+        {{ form.content(cols=50, rows=10) }}
+    </div>
+    <div>
+        {{ form.author.label }}<br>
+        {{ form.author() }}
+    </div>
+    <div>
+        {{ form.tags.label }}<br>
+        {{ form.tags() }}
+    </div>
+    <button type="submit">Додати</button>
+</form>
+{% endblock %}
